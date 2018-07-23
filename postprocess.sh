@@ -48,7 +48,7 @@ elif [ "$FORMAT" == "aac" ]; then
 	cp "$FILE" "$FILE".m4a
 	#ffmpeg -hide_banner -loglevel panic -i "$FILE" -vn -c:a copy "$FILE".aac
 	aacgain -r "$FILE".m4a
-	./wez-atomicparsley-9183fff907bf/AtomicParsley "$FILE".m4a --artist "$ARTIST" --title "$TITLE" --comment "$YOUTUBE_ID"
+	./wez-atomicparsley/AtomicParsley "$FILE".m4a --artist "$ARTIST" --title "$TITLE" --comment "$YOUTUBE_ID"
 	TAGGED_FILE=`ls | grep "$FILE" | grep "\-temp\-"`
 	mv "$TAGGED_FILE" "output/$ARTIST - $TITLE".m4a
 	echo "final output: output/$ARTIST - $TITLE".m4a
